@@ -1,2 +1,125 @@
-<meta http-equiv="refresh" content="0; url=https://ks.141412.xyz/index.html" />
-<p><a href="https://ks.141412.xyz/index.html">Redirect</a></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ks GITHUB Page</title>
+    <link rel=stylesheet href=ks_new.css>
+      <style>
+/* open-sans-regular - cyrillic_cyrillic-ext_greek_greek-ext_hebrew_latin_latin-ext_math_symbols_vietnamese */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/open-sans-v40-cyrillic_cyrillic-ext_greek_greek-ext_hebrew_latin_latin-ext_math_symbols_vietnamese-regular.eot'); /* IE9 Compat Modes */
+  src: url('fonts/open-sans-v40-cyrillic_cyrillic-ext_greek_greek-ext_hebrew_latin_latin-ext_math_symbols_vietnamese-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/open-sans-v40-cyrillic_cyrillic-ext_greek_greek-ext_hebrew_latin_latin-ext_math_symbols_vietnamese-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('fonts/open-sans-v40-cyrillic_cyrillic-ext_greek_greek-ext_hebrew_latin_latin-ext_math_symbols_vietnamese-regular.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('fonts/open-sans-v40-cyrillic_cyrillic-ext_greek_greek-ext_hebrew_latin_latin-ext_math_symbols_vietnamese-regular.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+       url('fonts/open-sans-v40-cyrillic_cyrillic-ext_greek_greek-ext_hebrew_latin_latin-ext_math_symbols_vietnamese-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
+</style>
+    
+</head>
+<body class="KS-Metrolike-theme">
+    <div class="start-screen">
+        <header class="start-header">
+            <h1>KS GITHUB PAGE</h1>
+            <div class="user-tile">
+                <a href=/index.html> <img src="profile.png" alt="KenzieShane Profile" class="profile-img"> </a>
+                <span>KS</span>
+            </div>
+        </header>
+        
+        <div class="tile-container">
+            <!-- Row 1 -->
+            <div class="tile large blue" data-project="web-app">
+                <img src="internet-svgrepo-com.svg" style="width:50%;height:50%">
+                <span>Screen Aspect Ratio Turbowarp/Scratch Extension</span>
+            </div>
+        
+        <footer class="start-footer">
+            <div class="time">10:45 AM</div>
+            <div class="date">Friday, March 28</div>
+        </footer>
+    </div>
+    
+    <!-- Project Detail Panels -->
+    <div class="project-panel" id="web-app-panel">
+        <button class="back-button">← Back</button>
+        <h2>Extensions</h2>
+        <div class="project-content">
+            <div class="project-details">
+                <h3>Screen Aspect Ratio</h3>
+                <p>an scratch and turbowarp extensions, pretty good at it's job.</p>
+                <a href="http://github.com/kenzieshane/Screen-Aspect-Ratio-Extension/releases" class="github-button">View on GitHub</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Similar panels for other projects would go here -->
+    
+    <script> // script.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Update time and date
+    function updateDateTime() {
+        const now = new Date();
+        const timeElement = document.querySelector('.time');
+        const dateElement = document.querySelector('.date');
+        
+        const options = { 
+            hour: 'numeric', 
+            minute: 'numeric',
+            hour12: true
+        };
+        timeElement.textContent = now.toLocaleTimeString('en-US', options);
+        
+        const dateOptions = { 
+            weekday: 'long', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+        };
+        dateElement.textContent = now.toLocaleDateString('en-US', dateOptions);
+    }
+    
+    updateDateTime();
+    setInterval(updateDateTime, 60000);
+    
+    // Tile click handlers
+    const tiles = document.querySelectorAll('.tile');
+    const projectPanels = document.querySelectorAll('.project-panel');
+    
+    tiles.forEach(tile => {
+        tile.addEventListener('click', function() {
+            const projectId = this.getAttribute('data-project');
+            const panel = document.getElementById(`${projectId}-panel`);
+            
+            if (panel) {
+                panel.classList.add('active');
+            }
+        });
+    });
+    
+    // Back button handlers
+    const backButtons = document.querySelectorAll('.back-button');
+    
+    backButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            this.closest('.project-panel').classList.remove('active');
+        });
+    });
+    
+    // Close panel when clicking outside content
+    projectPanels.forEach(panel => {
+        panel.addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('active');
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>
